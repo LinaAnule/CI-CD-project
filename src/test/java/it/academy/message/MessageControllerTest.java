@@ -30,7 +30,7 @@ class MessageControllerTest {
 		Mockito.when(messageBean.getMessage()).thenReturn(message);
 
 		String result = controller.createMessage(message);
-		//nothing here 3
+		//nothing here 4
 		Assertions.assertThat(result).isEqualTo("Message: `" + message + "` was save successfully.");
 	}
 
