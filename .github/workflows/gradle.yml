@@ -39,12 +39,15 @@ jobs:
     - name: Deploy to Render
       if: success()   # Only run this step if all preceding steps were successful
       env:
-        RENDER_DEPLOY_KEY: ${{ secrets.RENDER_DEPLOY_KEY}}  
+        RENDER_DEPLOY_KEY: ${{ secrets.RENDER_DEPLOY_KEY }}  
       run: |
-        curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $RENDER_DEPLOY_KEY" \
-        -d '{"commit_hash": "${{ github.sha }}"}' \
-        https://api.render.com/v1/deploys/srv-cns33iv79t8c73d9rfrg
-      # https://api.render.com/v1/services/srv-cns33iv79t8c73d9rfrg/deploys
+         curl -X POST \
+         -H "accept: application/json" \
+         -H "content-type: application/json" \
+         -H "Authorization: Bearer $RENDER_DEPLOY_KEY" \
+         -d '{"clearCache": "do_not_clear"}' \
+         https://api.render.com/v1/services/srv-cns33iv79t8c73d9rfrg/deploys
+
 
 
 
