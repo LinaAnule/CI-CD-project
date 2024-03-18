@@ -43,8 +43,9 @@ jobs:
       run: |
         curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $RENDER_DEPLOY_KEY" \
         -d '{"commit_hash": "${{ github.sha }}"}' \
-        https://api.render.com/v1/services/srv-cns33iv79t8c73d9rfrg/deploys
-      # https://api.render.com/v1/deploys/your-service-id
+        https://api.render.com/v1/deploys/srv-cns33iv79t8c73d9rfrg
+      # https://api.render.com/v1/services/srv-cns33iv79t8c73d9rfrg/deploys
+
 
 
 
