@@ -31,7 +31,7 @@ class MessageControllerTest {
 
 		String result = controller.createMessage(message);
 
-		Assertions.assertThat(result).isEqualTo("Message: `" + message + "` was save successfully. WOOHOO");
+		Assertions.assertThat(result).isEqualTo("Message: `" + message + "` was save successfully.");
 	}
 
 }
